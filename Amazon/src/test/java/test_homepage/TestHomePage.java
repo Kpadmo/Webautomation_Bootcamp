@@ -3,6 +3,7 @@ package test_homepage;
 import base.CommonAPI;
 import homepage.HomePage;
 import homepage.ProductNavigate;
+import homepage.SearchAndVerify;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeMethod;
@@ -40,6 +41,19 @@ public class TestHomePage extends CommonAPI {
     {
         productNavigate.productInfo();
     }
+
+    SearchAndVerify searchAndVerify;
+
+    @BeforeMethod
+    public void getsearchandverify() {
+        searchAndVerify = PageFactory.initElements(driver, SearchAndVerify.class);
+    }
+
+    @Test
+    public void setSearchAndVerify() {
+        searchAndVerify.verifyproduct();
+    }
+
 
 }
 
